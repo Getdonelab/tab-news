@@ -1,0 +1,14 @@
+{
+  "name": "SEO - News",
+  "description": "Daily news of the SEO",
+  "version": "1.0",
+  "manifest_version": 3,
+
+  "background": {
+    "service_worker": "/js/background.js"
+  },
+
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  }
+}
