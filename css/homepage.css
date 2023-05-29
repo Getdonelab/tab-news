@@ -11,3 +11,10 @@
 .container {
   padding: 2px 16px;
 }
+a {
+  text-decoration: none;
+  color: black;
+}
+.published {
+  font-weight: bold;
+}

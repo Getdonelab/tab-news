@@ -27,6 +27,7 @@ function loadDataintoPage(feedData) {
     .articles.slice(0, 10)
     .map((news) => {
       let stringNode = `
+      <a href="${news.url}">
           <div class="card">
               <img src=${
                 news.urlToImage
@@ -34,11 +35,16 @@ function loadDataintoPage(feedData) {
                   : "https://searchengineland.com/wp-content/seloads/2014/08/seo-idea-lightbulbs-ss-1920-800x450.jpg"
               } alt="Avatar" style="width: 100%" />
               <div class="container">
+              <h3> ${news.title} </h3>
                 <h4><b> by ${news.author} </b></h4>
                 <p>${news.description}</p>
+                <p class="published">Published At ${new Date(
+                  news.publishedAt
+                ).toLocaleDateString("en-GB")}<p>
               </div>
-            </div>
-          `;
+          </div>
+      </a>
+      `;
 
       var newTextNode = document.getElementById("cards");
       newTextNode && newTextNode.insertAdjacentHTML("beforeend", stringNode);
